@@ -1,0 +1,39 @@
+.imgFluid{
+  width: 100%;
+  height: auto;
+}
+.container{
+  margin-top: 2rem;
+}
+.testDownImg {
+  position: relative;
+  width: 90%;
+  margin: -5rem auto 0 auto;
+  background-color: white;
+  min-height: 200px;
+  padding: 1rem;
+
+}
+
+.testDownImg p {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #4d494a;
+  font-family: Georgia, Times New Roman, Times, serif;
+
+}
+.imgBack{
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  max-width: 4%;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .testDownImg{
+    width: 100%;
+  }
+  .imgBack{
+    display: none;
+  }
+}

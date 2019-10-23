@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="row Criteton" *ngFor="let item of links">
+    <div class="col-12" >
+      <a [routerLink]="item.link"><img src={{item.img}} class="imgCatalog" [attr.alt]="item.title" > </a>
+    </div>
+  </div>
+</div>

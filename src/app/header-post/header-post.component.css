@@ -1,0 +1,11 @@
+.navbarLogo{
+  font-family: 'shirota', sans-serif;
+  font-size: 2rem;
+}
+.navbar>.container, .navbar>.container-fluid{
+  justify-content: start;
+}
+.navbar-dark .navbar-toggler{
+  margin-right: 10px;
+  border: none;
+}

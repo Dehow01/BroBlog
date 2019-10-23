@@ -1,0 +1,11 @@
+.imgCatalog{
+  width: 100%;
+  height: auto;
+}
+.Criteton{
+  cursor: pointer;
+  padding: 2rem 0 0 0;
+}
+.Criteton:last-child{
+  margin-bottom: 2rem;
+}

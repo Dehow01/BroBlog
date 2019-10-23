@@ -1,0 +1,20 @@
+{
+  "data":
+    [
+      {
+        "title": "Здоровье",
+        "link": "medical",
+        "img": "../../assets/img/health.jpg"
+      },
+      {
+        "title": "Рецепты",
+        "link": "recipes",
+        "img": "../../assets/img/recept.jpg"
+      },
+      {
+        "title": "Семья",
+        "link": "family",
+        "img": "../../assets/img/family.jpg"
+      }
+    ]
+}

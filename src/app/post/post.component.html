@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" (click)="goToPostPage(item.idPost)" *ngFor="let item of notes">
+    <div class="col-12">
+      <div class="imgPost">
+        <p class="text-center"><img src="{{item.img}}" class="imgFluid"></p>
+      </div>
+      <div class="testDownImg">
+        <h2>
+          {{item.title}}
+        </h2>
+        <p class="button">
+          <button type="button" class="btn btn-outline-dark btn-lg">Читать</button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+

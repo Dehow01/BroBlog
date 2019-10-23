@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="imgPost">
+        <p class="text-center"><img [src]="post.imgPagePost" class="img-fluid">
+        </p>
+        <br>
+      </div>
+      <div class="testDownImg" [innerHTML]="post.innerHtml">
+      </div>
+    </div>
+
+  </div>
+</div>
+<app-card-recommendation [category]="post.category"></app-card-recommendation>
+<div class="back">
+  <img src="../../assets/img/back.png" class="imgBack" (click)="backClick()" >
+</div>

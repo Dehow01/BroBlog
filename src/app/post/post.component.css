@@ -1,0 +1,44 @@
+.row{
+  margin: 1rem 0 0 0;
+}
+.imgFluid {
+  width: 100%;
+  height: auto;
+}
+
+.testDownImg {
+  position: relative;
+  width: 90%;
+  margin: -5rem auto 0 auto;
+  background-color: white;
+  min-height: 200px;
+  padding: 1rem;
+
+}
+.testDownImg h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #4d494a;
+  font-family: Georgia, Times New Roman, Times, serif;
+
+
+}
+.imgPost{
+  cursor: pointer;
+}
+.button{
+  margin-top: 10px;
+  text-align: right;
+}
+@media (max-width: 768px) {
+  .testDownImg{
+    width: 95%;
+
+  }
+  .testDownImg p{
+    font-size: 1.5rem;
+  }
+  .button{
+    text-align: left;
+  }
+}

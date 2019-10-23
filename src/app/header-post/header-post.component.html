@@ -1,0 +1,22 @@
+<header>
+  <nav class="navbar navbar-dark bg-dark">
+
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" *ngIf="!visibility">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand navbarLogo" routerLink="">
+        ЮНОНА
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav" *ngIf="!visibility">
+      <ul class="navbar-nav">
+        <li class="nav-item"  *ngFor="let item of links">
+          <a class="nav-link" [routerLink]="['/', item.link]">{{item.title}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
