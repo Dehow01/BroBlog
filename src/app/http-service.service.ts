@@ -1,28 +1,30 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams, HttpHeaders} from '@angular/common/http';
 import {Post} from './model/Post';
 import {Observable} from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Categories} from './model/linkHeader';
+import { map, filter, scan } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpServiceService {
-
+  baseUrl: string;
   constructor(private http: HttpClient) {
-  }
-  getData(category: string): Observable<Post[]> {
-    return this.http.get<Post[]>("/api/category/" + category);
+    this.baseUrl = 'https://us-central1-junonalove-f4d6c.cloudfunctions.net/api';
   }
   getPostPage(id: number): Observable<Post> {
-    return this.http.get<Post>("/api/post/" + id.toString());
+    return this.http.get<Post>(`${this.baseUrl}/post/${id.toString()}`);
   }
   getLinkHeader(): Observable<Categories[]> {
-    return this.http.get<Categories[]>("/api/getHeaderLink");
+    return this.http.get<Categories[]>(`${this.baseUrl}/getHeaderLink`);
   }
   getRecommendation(category: string): Observable<Post[]> {
-    console.log( this.http.post<Post[]>("/api/getRecommendation", category));
-    return (this.http.post<Post[]>("/api/getRecommendation", category));
-    }
+    return this.http.get<Post[]>(`${this.baseUrl}/getRecommendation/${category}`);
+  }
+  fetchPosts(category: string, page: number) {
+    return this.http.get<Post[]>(`${this.baseUrl}/posts/${category}?page=${page}`);
+  }
+
+
 }

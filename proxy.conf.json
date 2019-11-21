@@ -1,8 +1,6 @@
 {
   "/api/*": {
-    "target": "http://localhost:8000/",
-    "secure": false,
-    "changeOrigin": true,
-    "logLevel": "debug"
+    "target": "https://us-central1-junonalove-f4d6c.cloudfunctions.net/",
+    "secure": false
   }
 }

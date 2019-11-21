@@ -1,16 +1,19 @@
+
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
 const bodyParser = require("body-parser");
 const db = require("./config/db");
 const app = express();
 const port = 8000;
-const mongoClient = new MongoClient(db.url, {useNewUrlParser: true});
+
 let dbClient;
 let clientDb;
+
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-
+const mongoClient = new MongoClient(db.url, {useNewUrlParser: true});
 mongoClient.connect(function (err, client) {
   if (err) {
     return console.log(err);
@@ -57,10 +60,22 @@ app.get("/api/getHeaderLink", function (req, res) {
 
 });
 
-app.post("/api/getRecommendation", function(req, res) {
-  let category = req.param("category");
+app.get("/api/getRecommendation/:category", function(req, res) {
+  let category = req.params.category;
   const collection = dbClient.collection("notes");
   collection.find({"category": category.toString()}).sort({idPost: -1}).limit(3).toArray(function(err, notes) {
+    if (err) {
+      return console.log(err);
+    }
+    res.send(notes);
+  });
+});
+
+app.get("/api/posts/:category/", function(req, res) {
+  let category = req.params.category;
+  let page = req.query.page;
+  const collection = dbClient.collection("notes");
+  collection.find({"category": category.toString()}).skip(page * 6).limit(6).sort({idPost: -1}).toArray(function(err, notes) {
     if (err) {
       return console.log(err);
     }
